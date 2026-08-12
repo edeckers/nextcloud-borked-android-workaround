@@ -1,0 +1,22 @@
+[project]
+name = "nextcloud-borked-android-workaround"
+version = "0.1.0"
+description = "Compare an Android phone's photos against a Nextcloud account over adb and WebDAV, and upload the ones that never synced."
+readme = "README.md"
+authors = [
+    { name = "Ely Deckers", email = "e.deckers@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8",
+    "python-dotenv>=1",
+    "requests>=2",
+]
+
+[project.scripts]
+nextcloud-borked-android-workaround = "nextcloud_borked_android_workaround:main"
+nextcloud-upload-missing = "nextcloud_borked_android_workaround.upload_cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.9,<0.10.0"]
+build-backend = "uv_build"
